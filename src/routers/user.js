@@ -12,11 +12,11 @@ router.post('/users', async (req, res) => {
     const user = new User(req.body);
     try {
         await user.save()
-        sendWelcomeEmail(user.email, user.name)
+        //sendWelcomeEmail(user.email, user.name)
         const token = await user.generateAuthToken()
         res.cookie('auth_token', token)
         res.sendFile(path.resolve(__dirname, '..', 'views', 'private.html'))
-        res.status(201).send({ user, token }) 
+       // res.status(201).send({ user, token }) 
     } catch (error) {
         res.status(400).send(error)
     }
@@ -27,8 +27,9 @@ router.post('/users/login', async (req, res) => {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
         res.cookie('auth_token', token)
+        //res.send('lmao')
         res.sendFile(path.resolve(__dirname, '..', 'views', 'private.html'))
-        res.send({ user, token })
+        //res.send({ user, token })
     } catch (e) {
         res.status(400).send()
     }
