@@ -45,7 +45,7 @@
     <section class="white-section" id="features">
       <div class="container-fluid">
         <div class="feature-box col-lg-4">
-          <a class="Reg" href="/">Login?</a>
+          <label class="Reg">REGISTER</label>
           <form method="POST" action="/users">
             <div class="form-group">
               <label for="name">Name</label>
@@ -59,7 +59,9 @@
               <label for="password">Password</label>
               <input type="text" class="form-control" name="password" id="password" />
             </div>
-              <button>Register</button>
+            <button type="submit" onclick="location.href='dashboard.html'" class="btn btn-primary">Submit</button>
+            <button onclick="location.href='index.html'" type="button" class="btn btn-primary">Login?</button>
+          
           </form>                     
         </div>  
       </div>

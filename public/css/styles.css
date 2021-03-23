@@ -107,6 +107,13 @@ body {
     position: absolute;
     right: 30%;
   }
+  .second-image {
+    width: 60%;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-right: 0px;
+  }
   
   /* Features Section */
   
